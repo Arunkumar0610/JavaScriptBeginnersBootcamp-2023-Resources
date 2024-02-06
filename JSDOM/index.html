@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript and the DOM</title>
+</head>
+<body>
+<a id="navigation" href="index.html">Home</a>
+  <h1>DOM- Document Object Model</h1> 
+  <p> <span style="color:blue;">step-1:</span>
+    run <span  style="color:blue;" >document</span> in browser console you will get same your html source code in console.
+</p>
+  <ol>
+      <li>There are two instances in which the browser generated DOM will be different than the HTML source code.</li>
+      <li>The DOM is modified by client side javascript.</li>
+      <li>The browser automatically fixes errors and the source code.</li>
+  </ol>
+  <p>Lets demontrate how the DOM can be modifies by client side javascript</p>
+  <p> <span style="color:blue;">step-2:</span>
+    run <span  style="color:blue;" >document.body</span> in browser console you will get same your body tag code from html document which is nested with all the tags present in body tag in console.
+</p>
+
+<p><b>so here document is an object and body is a property of that object we have accessed with dot notation</b></p>
+<p><span style="color:blue;">step-3:</span><b>We can change the body element from our console lets change the background color of body to tomato
+    by running <span  style="color:blue;" >document.body.style.backgroundColor="tomato"</span> in browser console and see the changes.
+    And you can notice that element color of body in DOM is changed in Elements tab.
+    But if you see the view page source by right click and select view page source you can see that
+    there is no style added to body tag so that the source of the website will not be changed and will
+    never be affected by client side javascript.
+</b></p>
+
+<h2> Now lets work on DOM</h2>
+<p><span style="color:blue;">step-4:</span> Now we added a (anchor tag) in our source code which we navigate to index.html (same page we are in)
+    if i wanted to get this anchor tag in the console i added a id name navigation to this tag by using id i will
+get this anchor tag in browser console. Now run this in console <span  style="color:blue;" >document.getElementById('navigation');</span>  so we get 
+the anchor tag in the console with all the content inside it</p>
+<p><span style="color:blue;">step-4:</span> lets assign this element <span  style="color:blue;" >document.getElementById('navigation');</span> to variable navigationLink in console so we can access it and can modify its properties</p>
+<ul>
+    <li> run this in console <span style="color:blue;">var navigationLink=document.getElementById('navigation');</span> -
+    we assigned the dom element anchor tag in to variable we can access it and modify now using this variable
+    </li>
+    <li >run this in console <span style="color:blue;">navigationLink;</span> will get the anchor tag content</li>
+    <li>let's modify href attribute of anchor tag using this in console <span style="color:blue;">navigationLink.href="https://www.npr.org;</span>. Now the href attribute is changed to npr site</li>
+    <li >let's modify text  of anchor tag using this in console<span style="color:blue;">navigationLink.textContent=Vist NPR;</span> . Now Home is changed to Visit NPR</li>
+</ul>
+
+<h2>DOM & Nodes</h2>
+<p> There are so many nodes but we mainly use three nodes they are:</p>
+<ul>
+    <li>Element Nodes - When an HTML element is an item in the DOM. It is referred to as an Element Node</li>
+    <li>Text Nodes - Any alone text outside of an element is known as text node</li>
+    <li>Comment Nodes- an HTML comment is an comment node </li>
+</ul>
+<b> In addition to these nodes the document itself is an document node. Which is the root of all other nodes</b>
+<p> DOM Tree: The document consists of a tree structure of nested nodes, which is often referred to as the DOM tree. </p>
+<p> Like in the Family tree the nodes in the dom are also referred to as parents, children And
+    siblings, depending on their relation to other nodes.
+</p>
+<h2>DOM Nodes-</h2>
+<a href="dom-nodes.html">to demontrate the dom nodes click here</a>
+</body>
+</html>

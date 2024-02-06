@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Nodes</title>
+</head>
+<body>
+    <h1>this is an element node</h1>
+    <!--this is an comment node-->
+    this is an text node
+
+    <p>Now inspect and click on the h1 tag in elements tab and you see ==$0 at the end so by using that $0 we can get node type</p>
+    <p> Lets try- <span style="color: blue;">$0.NodeType;</span> o/p -> 1</p>
+    <p>Now inspect and click on the comment in elements tab and you see ==$0 at the end so by using that $0 we can get node type</p>
+    <p> Lets try- <span style="color: blue;">$0.NodeType;</span> o/p -> 8</p>
+    <p>Now inspect and click on the text node in elements tab and you see ==$0 at the end so by using that $0 we can get node type</p>
+    <p> Lets try- <span style="color: blue;">$0.NodeType;</span> o/p -> 3</p>
+
+    <p> You can get the nodeType by using document object also like <span style="color: blue;">document.body.nodeType;</span> o/p->1</p>
+    <p> Here in this document html is root has 2 children -> head and body.this are sibilings to each other.head and body has childrens too. so basically it is a DOM tree</p>
+    <b>
+        so then the nodeType of <br/> elementnode is 1 <br/> commentnode is 8 <br/> textnode is 3
+    </b>
+</body>
+</html>
