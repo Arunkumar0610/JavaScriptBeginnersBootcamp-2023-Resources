@@ -1,3 +1,27 @@
+//functions are three types function expressions(regular functions), anonymous functions and IIFE(Immediately invoked function expression)
+/*ex-> 
+function expression-
+function add(x,y){
+    return x+y;
+} 
+console.log(add(1,2));
+----------------------------------
+anonymous functions-
+var addition=function(x,y){
+    return x+y;
+}
+console.log(addition(1,2));
+------------------------------------
+IIFE(Immediately Invoked Function Expression)-
+console.log((function(x,y){
+    return x+y;
+})(1,2));
+------------------------------------------
+arrowfunctions
+var a=(x)=>x*x;
+console.log(a(2));
+*/
+
 //Human, Bear and Gun Game is like a rock paper scissor game 
 //let do this using functions
 function getUserInput(userInput){
