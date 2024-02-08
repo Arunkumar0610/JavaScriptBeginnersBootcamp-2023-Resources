@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+<body>
+  <h1 id="title">DOM manipulation- Mehods and properties</h1>  
+  <p class="title">DOM methods- Actions we can perform on Html elements
+      <br>- All html elements are defined as objects. a method is an action you can do like add or delete the html elements.
+  </p>
+  <p>DOM properties- A property is a value that you can get or set, like changing the content of Html element.
+    <br>- All html elements are defined as objects. a method is an action you can do like add or delete the html elements.
+    </p>
+
+    <p><span style="color: blue;">document.getElementById('title');</span>- will get the element from DOM using id that is h1 tag</p>
+    <p><span style="color: blue;">var title=document.getElementById('title');</span>- we assigned that element to variable to access and modify it</p>
+    <p><span style="color: blue;">document.querySelector();</span>-the document method querySelector() returns the first element with in the document that matchs the 
+    specified selector or group of selectors.
+<br>- if you are targeting the class it will be the first class in the DOM that matches the value that you are looking for.
+<br>- if you are targeting the id then your first possible match will be the only match because there should be an ID of only one value per page.</p>
+<p>-lets assign the id title to var title1
+    <br>=><span style="color: blue;">var title1= document.querySelector('#title');</span> so the element with the id title is the only match that gets assigned to the title 1 variable
+<br>- <b>notice that we had to add the hash symbol(#) as we would if we were targeting something with CSS.
+    This is because the querySelector() DOM method is more generic than the getElementById() that is only looking for IDs.
+</b>
+<br>- querySelector can target any element on our page. so, we have to specify what kind of element we are looking for.</p>
+<p>=> if we have both class and id with name title than the querySelector() method it will get title tag element. if no title tag is there it will give null<span style="color: blue;">document.querySelector('title');</span>
+  <br>-  <span style="color: blue;">document.querySelector('.title');</span> - will get the first element with class title.
+  <br>-  <span style="color: blue;">document.querySelector('#title');</span>- will get the id with that element  </p>
+
+<p> lets use the DOM property textContent by using the <span style="color: blue;">var title1= document.querySelector('#title');</span> that we assigned and modify the textContent in browser console
+   <br> <span style="color: blue;">title1.textConent="DOM manipulation"</span></p>
+
+<p>More DOM methods and properties- appendChild(),removeChild(),createElement() and firstChild</p>
+
+<p>appendChild()-> adds a node to the end of the list of children of specified parent node.</p>
+<p>removeChild()-> removes a child node from the DOM</p>
+<p> createElement()-> creates the HTML element specified by tagName</p>
+<p> property - firstChild-> read-only property returns the node's first child in the tree</p>
+<div style="border:1px solid black; padding:20px;">
+<h1 id="todo-title">Todo Tracker</h1>
+<form>
+    <input type="text" id="user-todo" placeholder="New Todo">
+</form>
+<h2 id="todo-header">Todos</h2>
+<ul>
+    <li class="todos">list1</li>
+    <li class="todos">list2</li>
+    <li class="todos">list3</li>
+</ul>  
+<button id="clear">clear All</button>
+</div>
+<p>Task -> create a variable called todo and assign to it the value of an 'li' tag we have created using 
+    "document.createElement('li')"
+</p>
+<b style="color: blue;"> var todo=document.createElement('li');</b>
+<p>Task -> use the textConent property to assign a string of a todo you would like to display</p>
+<b style="color: blue;"> todo.textContent='Go to sleep';</b>
+<p>Task -> create a variable called 'todosList' and assign to it the target of the 'ul' tag.</p>
+<b style="color: blue;"> var todosList=document.querySelector('ul');</b>
+<p>Task-> use appendChild() on todosList to ass todo</p>
+<b style="color: blue;">todosList.appendChild(todo);</b>
+<p>Task-> create todo2, todo3 li elements and assign a string to them with textContent
+    then add them to your todoList with the appendChild() DOM method
+</p>
+<b style="color: blue;"> var todo2=document.createElement('li');</b><br>
+<b style="color: blue;"> var todo3=document.createElement('li');</b><br>
+<b style="color: blue;"> todo2.textContent='Wake up';</b><br>
+<b style="color: blue;"> todo3.textContent='Have breakfast';</b><br>
+<b style="color: blue;">todosList.appendChild(todo2);</b><br>
+<b style="color: blue;">todosList.appendChild(todo3);</b>
+<p>Task-> on the todosList apply the removeChild() DOM method and pass to it the argument of our todosList
+    with the property of firstChild we need to execute twice to remove one li element from todosList
+</p>
+<b style="color: blue;">todosList.removeChild(todosList.firstChild); // " "</b><br>
+<b style="color: blue;">todosList.removeChild(todosList.firstChild);// li of "Go to sleep"</b>
+<p>
+    Task-> create while loop with conditional of 'todosList.firstChild'. In the code block run 'todosList.removeChild(todoList.firstChild);'
+</p>
+<b style="color: blue;">while(todosList.firstChild){<br>
+    todosList.removeChild(todosList.firstChild); <br> 
+    }
+</b>
+
+<p> <b>UserInteraction - addEventListener() method</b> -> attaches an event handler to the specified element.
+attaches an element without overwritting existing event handlers. <br>
+syntax -> element.addEventListener(event,function);</p>
+
+<p> task-> add an 'addEventListener' on our button element, Pass to it a 'click' event
+    and for the second argument a console.log("You have clicked the button");
+</p>
+<b style="color:blue">var button=document.querySelector('button');</b><br> or <br>
+<b style="color:blue">var button=document.querySelector('#clear');</b><br> or <br>
+<b style="color:blue">var button=document.getElementById('clear');</b> <br>
+<b style="color: blue;">button.addEventListener('click',function(){console.log("You have clicked the button")});</b>
+<p> by clicking the button you will get the message in console as You have clicked the button</p>
+<p>Now lets add another event to the button</p>
+<b style="color: blue;">button.addEventListener('click',function(){console.log("Another event")});</b>
+<p> by clicking the button you will get the messages in console as You have clicked the button and Another event</p>
+<p> <b>Working with Forms</b><br>
+task-> create variables that target the 'form' element and the 'input' id</p>
+<b style="color:blue">var formField=document.querySelector('form');</b><br>
+<b style="color:blue">var input=document.getElementById('user-todo');</b>
+<p> Task-> add event Listener to 'formField' listening for a 'submit' and console
+    log the text "form has been submitted. The sub,it event is fired when a "form is submitted."
+</p>
+<b style="color:blue">formField.addEventListener('submit',function(){console.log("form has been submitted")})</b>
+<p> Note: any time we refresh the page we have to declare our variables again . but writting e - event inside the eventListener function(e) will and use that e to stop refresh the page on input by using <b> e.preventDefault();</b></p>
+<b style="color: blue;">In eventListener  add this two steps: and capture the input value<br>
+    <br>formField.addEventListener('submit',function(e){<br>
+        e.preventDefault(); <br>
+        console.log("form has been submitted.");
+    });
+ </b>
+ <b style="color: blue;">formField.addEventListener('submit',function(e){<br>
+    e.preventDefault(); <br>
+    console.log(input.value);
+});</b>
+
+<p><b>localStorage-></b> web storage that stores data with no expiration date</p>
+<p> run <span style="color: blue;">localStorage;</span> in console will get o/p  of storage object ->Storage{length:0}</p>
+<p>Four Methods that used with localStorage are <span style="color: blue;">setItem(),getItem(),removeItem(),clear()</span></p>
+<p><b>setItem()-></b> add a key and value to localStorage.
+    <br> <span style="color: blue;">localStorage.setItem('todos','Make Breakfast');<br>localStorage.setItem('doNotDo','Sleep in class'); <br> localStorage;</span><br> o/p->Storage{doNotDo:"Sleep in class",todos:"Make Breakfast",length:2}
+</p>
+<p><b>getItem()-></b> retrieve a value by the key from localStorage.
+    <br> <span style="color: blue;">localStorage.getItem('todos');</span><br>o/p-> "Make Breakfast"
+</p>
+<p><b>removeItem()-></b> removes an item from localStorage by using key.
+    <br> <span style="color: blue;">localStorage.removeItem('doNotDo'); <br> localStorage;</span><br>o/p->Storage{todos:"Make Breakfast",length:1}
+</p>
+<p><b>clear()-></b> clears all storage of localStorage.
+    <br> <span style="color: blue;">localStorage.clear(); <br> localStorage;</span><br>o/p->Storage{length:0}
+</p>
+</body>
+</html>
