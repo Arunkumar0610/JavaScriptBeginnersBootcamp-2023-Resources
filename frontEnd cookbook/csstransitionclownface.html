@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS TRANSITION</title>
+    <style>
+        #container{
+            width:100%;
+            height:250px;
+            background-color: #9ad3de;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #hexagon:hover{
+            transform: scale3d(1.2,1.2,1)rotate(45deg) ;
+        }
+        #hexagon{
+            transition-property: transform;
+            transition-duration: .1s;
+        }
+        .sqtorec{
+            background-color: red;
+            width:100px;
+            height:100px;
+            margin:10px;
+            transition: width 2s;
+        }
+        .sqtorec:hover{
+            width:300px;
+            
+        }
+        #box1{
+            transition-timing-function: linear;
+        }
+        #box2{
+            transition-timing-function: ease;
+        }
+        #box3{
+            transition-timing-function: ease-in;
+        }
+        #box4{
+            transition-timing-function: ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img id="hexagon" src="https://github.com/robgmerrill/online-course-images/blob/master/clown.png?raw=true" alt="clown image"/>
+    </div>
+    <br><br>
+    <h1> CSS Challenge on transition-timing-function</h1>
+     <div class="sqtorec" id="box1">same speed from start to end</div>
+     <div class="sqtorec" id="box2">slow start then fast then end slowly</div>
+     <div class="sqtorec" id="box3">slow start</div>
+     <div class="sqtorec" id="box4">slow end</div>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animation Challenge</title>
+    <style>
+        #title{
+            text-align:center;
+            animation: drop 1s;
+        }
+        #circle{
+            background-color: skyblue;
+            height:100px;
+            width:100px;
+            border-radius: 50%;
+            margin: 100px auto;
+            animation: disappear 2s infinite alternate linear;
+        }
+        #about{
+            text-align:center;
+            animation: delayExit 1s 5s forwards;
+        }
+        @keyframes delayExit {
+            0%{
+                transform: translateX(0);
+            }
+            100%{
+                transform: translateX(1200px);
+            } 
+        }
+        @keyframes disappear{
+            0%{
+                opacity: 1;
+            }
+            50%{
+                opacity:0.5;
+            }
+            100%{
+                opacity:0;
+            }
+        }
+        @keyframes drop{
+            0%{
+                transform:translateY(-100px);
+            }
+            100%{
+                transform:translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1 id="title">The Blue Dot</h1>
+        <div id="circle"></div>
+        <p id="about">This paragraph is going to disapper in about 5 seconds</p>
+    </div>
+</body>
+</html>

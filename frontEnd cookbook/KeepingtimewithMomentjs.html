@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MomentJs usage</title>
+    <style>
+        body {
+  /* fallback background is browser doesn't support linear gradients  */ 
+  background-color: #89d8d3;
+  /* gradient image */
+  background-image: linear-gradient(315deg, #89d8d3 0%, #03c8a8 74%);
+  /*  100% of the height  */
+  height: 100vh;
+  /* set the body display to grid */
+  display: grid;
+  /* center the grid contents */
+  place-items: center;
+}
+    </style>
+</head>
+<body>
+    <!-- image tag with src attribute pointing to hosted Santa image  -->
+    <img src="https://github.com/robgmerrill/online-course-images/blob/master/001-santa-claus.png?raw=true"/>
+    <h1>Count days till next christmas</h1>
+    <!-- h2 tag with an id of countdown that we will populate with moment library  -->
+    <h2 id="countdown"></h2>
+  </body>
+  <!-- This allows you to have access to the moment library -->
+  <script src="moment.js" ></script>
+  <script>
+      // declare variable `now` and set to the current time
+const now = moment();
+// declare variable `christmas` and set to December 25th
+let christmas = moment("Dec 25", "MMM DD");
+// create a conditional to check if `christmas` is before `now` by passing in `now` and `days` as parameters into the `isBefore()` method
+if ( christmas.isBefore(now, 'days') ) {
+  // if `christmas` is before the current date then add a year to the value of `christmas`
+  christmas = christmas.add(1, 'year');
+}
+// declare variable `diff` and set it equal to the difference between `christmas` and `now`
+let diff = christmas.diff(now, 'days');
+// declare variable `counter` and use a DOM method to target the `h2` tag with id of `countdown`
+let counter = document.getElementById('countdown');
+// set the `counter` variable `.innerHTML` property to the value of `diff` to display days till Christmas
+counter.innerHTML = diff;
+  </script>
+</html>

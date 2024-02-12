@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debugging</title>
+</head>
+<body>
+    <h1> JavaScript Debugging with Google Chrome DevTools</h1>
+    <h3>Step 1: Reproduce the bug</h3>
+    <p>2. In the input field for Number 1 provide the number 4.<br>
+
+    3. In the input field for Number 2 provide the number 3.<br>
+
+    4. Click Add Number 1 and Number 2 button.<br>
+
+    Result/Bug: 4 + 3 = 43<br>
+
+    Expected Result 4 + 3 = 7</p>
+    <label>Number1</label>
+    <input name="Number1" id="Number1" type="number"/>
+    <label>Number2</label>
+    <input name="Number2" id="Number2" type="number"/>
+    <button>Add Number1 and Number2</button>
+    <label id="answer"></label>
+    <script>
+        input1=document.getElementById("Number1");
+        input2=document.getElementById("Number2");
+        
+        answer=document.getElementById("answer");
+        
+        addbttn=document.querySelector("button");
+        addbttn.addEventListener('click',function(e){
+            e.preventDefault();
+            if(input1.value===''||input2.value===''){
+                answer.textContent="error one or more inputs are empty!!!"
+            }
+            else{
+            var result=parseInt(input1.value)+parseInt(input2.value);
+            answer.textContent=`${input1.value} + ${input2.value}= ${result}`;}
+        });
+        
+        
+    </script>
+</body>
+</html>
